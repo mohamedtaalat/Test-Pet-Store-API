@@ -1,0 +1,20 @@
+name: Run API Testing
+on:
+  push:
+    branches:
+      main
+jobs:
+  run-tests:
+    runs-on : ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6-beta
+        
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v6.0.0
+
+      - name: install newman
+        run: npm -g install newman
+
+      - name: run tests
+        run: newman run "postman/collections/49942325-4ad952bb-c78a-473b-baac-cdece65b3b3d.json"
