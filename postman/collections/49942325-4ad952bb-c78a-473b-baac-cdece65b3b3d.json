@@ -1,0 +1,511 @@
+{
+	"info": {
+		"_postman_id": "49942325-4ad952bb-c78a-473b-baac-cdece65b3b3d",
+		"name": "Test Pet Store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get methods",
+			"item": [
+				{
+					"name": "200 Ok",
+					"item": [
+						{
+							"name": "Get pet by id",
+							"id": "49942325-8a4fcd11-ca21-4e14-ab56-b15242923f02",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}pet/:id",
+									"host": [
+										"{{base_url}}pet"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "536405"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get pet by status",
+							"id": "49942325-1e6c8b26-4782-4285-95fa-e64147796bf6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}pet/findByStatus?status=available",
+									"host": [
+										"{{base_url}}pet"
+									],
+									"path": [
+										"findByStatus"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "available",
+											"type": "text"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get store inventory",
+							"id": "49942325-65db7b3f-b570-48fd-a876-d511b2efe5ab",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}store/inventory",
+									"host": [
+										"{{base_url}}store"
+									],
+									"path": [
+										"inventory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get store order",
+							"id": "49942325-70b783e5-348e-412a-a077-d9c6495b4322",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 10,\r\n  \"petId\": 536405,\r\n  \"quantity\": 1,\r\n  \"shipDate\": \"2025-11-24T14:23:37.737Z\",\r\n  \"status\": \"placed\",\r\n  \"complete\": true\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}store/order/:id",
+									"host": [
+										"{{base_url}}store"
+									],
+									"path": [
+										"order",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get user",
+							"id": "49942325-1b2f8287-0f74-47b6-86ce-563c11e19d43",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}user/:username",
+									"host": [
+										"{{base_url}}user"
+									],
+									"path": [
+										":username"
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": "mohamed12"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get user login",
+							"id": "49942325-ecd8af32-e691-4835-9306-40b8258fb012",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}user/login?username=mohamed12&password=string",
+									"host": [
+										"{{base_url}}user"
+									],
+									"path": [
+										"login"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "mohamed12"
+										},
+										{
+											"key": "password",
+											"value": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get user log out",
+							"id": "49942325-aa271ec3-4ac0-4a9f-bd3b-c4b5a89c003b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}user/logout",
+									"host": [
+										"{{base_url}}user"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "49942325-9e69aad4-93b7-40bd-9daa-84d4a6b3323b",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "300f1485-3904-472e-a7f0-0faddd658ce4",
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "27b0d342-0b27-4bb2-b8a1-c538459a2d7b",
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {},
+								"exec": [
+									"pm.test(\"Status code is 200 Ok\",()=>{\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								]
+							}
+						}
+					]
+				}
+			],
+			"id": "49942325-299c2c35-22c2-43ed-8626-fc646fbd9ce9"
+		},
+		{
+			"name": "Post methods",
+			"item": [
+				{
+					"name": "200 Ok",
+					"item": [
+						{
+							"name": "Post new pet to store",
+							"id": "49942325-8e20fea7-cf7f-421a-9f1b-3b1851a81a7e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 1,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"string\"\r\n  },\r\n  \"name\": \"doggie\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}pet",
+									"host": [
+										"{{base_url}}pet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post store order",
+							"id": "49942325-3f359572-2c30-49da-b3db-6fc5c7c54486",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 10,\r\n  \"petId\": 536405,\r\n  \"quantity\": 1,\r\n  \"shipDate\": \"2025-11-24T14:23:37.737Z\",\r\n  \"status\": \"placed\",\r\n  \"complete\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}store/order",
+									"host": [
+										"{{base_url}}store"
+									],
+									"path": [
+										"order"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post create user with list",
+							"id": "49942325-f724f228-8254-475b-8201-f673dae42ec5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n    \"id\": 57,\r\n    \"username\": \"mohamed12\",\r\n    \"firstName\": \"mohamded\",\r\n    \"lastName\": \"ta\",\r\n    \"email\": \"msoh2@test\",\r\n    \"password\": \"string\",\r\n    \"phone\": \"string\",\r\n    \"userStatus\": 0\r\n  }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}user/createWithList",
+									"host": [
+										"{{base_url}}user"
+									],
+									"path": [
+										"createWithList"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post create user",
+							"id": "49942325-1f6b95bd-6453-4561-a2b3-0f1c74230497",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 58,\r\n    \"username\": \"mohamed14\",\r\n    \"firstName\": \"mohamded\",\r\n    \"lastName\": \"ta\",\r\n    \"email\": \"msoh2@test\",\r\n    \"password\": \"string\",\r\n    \"phone\": \"string\",\r\n    \"userStatus\": 0\r\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}user",
+									"host": [
+										"{{base_url}}user"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "49942325-d6ff4fc4-85e7-4a41-8b3d-54457d06cd66",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "6c15150f-f193-4dda-914f-9843354767b8",
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "30587b2e-f4e0-421e-adf2-4040d6cd5d24",
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {},
+								"exec": [
+									"pm.test(\"Status code is 200 Ok\",()=>{\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								]
+							}
+						}
+					]
+				}
+			],
+			"id": "49942325-b0ddf9e8-6c18-4740-9b47-b56704fe774c"
+		},
+		{
+			"name": "Delete methods",
+			"item": [
+				{
+					"name": "200 Ok",
+					"item": [
+						{
+							"name": "Delete order",
+							"id": "49942325-c62897b5-66b5-4541-ab8f-3287a83b0a21",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 10,\r\n  \"petId\": 536405,\r\n  \"quantity\": 1,\r\n  \"shipDate\": \"2025-11-24T14:23:37.737Z\",\r\n  \"status\": \"placed\",\r\n  \"complete\": true\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}store/order/:id",
+									"host": [
+										"{{base_url}}store"
+									],
+									"path": [
+										"order",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "49942325-a58c47fe-0c7e-43e5-870a-6f014d9d5c75",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "65620c7c-bf92-480d-a15c-7b7dc514eb18",
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "35fa7511-ff7a-462a-8307-04fd4ea68bbf",
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {},
+								"exec": [
+									"pm.test(\"Status code is 200 Ok\",()=>{\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								]
+							}
+						}
+					]
+				}
+			],
+			"id": "49942325-c7dae000-b688-4136-9032-1458e5d88f82"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "dcb53dd2-dbca-47d0-842e-f0ee8bac95ef",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "92013010-5a24-49a0-b2da-b9b029131fd1",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://petstore.swagger.io/v2/"
+		}
+	]
+}
